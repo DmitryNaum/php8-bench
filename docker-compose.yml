@@ -1,0 +1,59 @@
+version: "3.7"
+
+services:
+
+  php74-no-opcache:
+    image: "php-perfomance-test-74-no-opcache"
+    build:
+      context: .
+      dockerfile: build/7.4/no-opcache.Dockerfile
+    volumes:
+      - ./app:/var/www/html/app
+
+  php74-opcache:
+    image: "php-perfomance-test-74-opcache"
+    build:
+      context: .
+      dockerfile: build/7.4/opcache.Dockerfile
+    volumes:
+      - ./app:/var/www/html/app
+
+  php8-no-opcache:
+    image: "php-perfomance-test-8-no-opcache"
+    build:
+      context: .
+      dockerfile: build/8/no-opcache.Dockerfile
+    volumes:
+      - ./app:/var/www/html/app
+
+  php8-opcache:
+    image: "php-perfomance-test-8-opcache"
+    build:
+      context: .
+      dockerfile: build/8/opcache.Dockerfile
+    volumes:
+      - ./app:/var/www/html/app
+
+  php8-jit-1205:
+    image: "php-perfomance-test-8-jit-1205"
+    build:
+      context: .
+      dockerfile: build/8/jit-1205.Dockerfile
+    volumes:
+      - ./app:/var/www/html/app
+
+  php8-jit-1235:
+    image: "php-perfomance-test-8-jit-1235"
+    build:
+      context: .
+      dockerfile: build/8/jit-1235.Dockerfile
+    volumes:
+      - ./app:/var/www/html/app
+
+  php8-jit-1255:
+    image: "php-perfomance-test-8-jit-1255"
+    build:
+      context: .
+      dockerfile: build/8/jit-1255.Dockerfile
+    volumes:
+      - ./app:/var/www/html/app
